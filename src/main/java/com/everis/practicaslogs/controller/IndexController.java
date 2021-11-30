@@ -1,0 +1,27 @@
+package com.everis.practicaslogs.controller;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class IndexController {
+
+	private final static Logger logger = LoggerFactory.getLogger(IndexController.class);
+	
+	private Long contadorIntentos = 0L;
+	
+	public IndexController(){
+		
+	}
+	
+	@GetMapping("/")
+	public ResponseEntity<String> index(){
+		return new ResponseEntity<String>(HttpStatus.OK).ok("hola");
+	}
+	
+	
+}
